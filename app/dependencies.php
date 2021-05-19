@@ -33,5 +33,14 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['db'] = function() {
+        $db = new PDO('mysql:host=127.0.0.1;dbname=todosapp', 'root', 'password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
+    };
+
+    $container['TasksModel'] = DI\factory('\App\Factories\TasksModelFactory');
+    $container['UncompletedController'] = DI\factory('\App\Factories\TasksModelFactory');
+
     $containerBuilder->addDefinitions($container);
 };
