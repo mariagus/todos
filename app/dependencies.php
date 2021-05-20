@@ -40,7 +40,8 @@ return function (ContainerBuilder $containerBuilder) {
     };
 
     $container['TasksModel'] = DI\factory('\App\Factories\TasksModelFactory');
-    $container['UncompletedController'] = DI\factory('\App\Factories\GetUncompletedControllerFactory');
+    $container['GetUncompletedController'] = DI\factory('\App\Factories\GetUncompletedControllerFactory');
+    $container['GetCompletedController'] = DI\factory('\App\Factories\GetCompletedControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };
