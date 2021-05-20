@@ -19,13 +19,13 @@ class TasksModel
     }
     public function getUncompletedTasks(): array
     {
-        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 0 AND `deleted` = 0;');
+        $query = $this->db->prepare('SELECT `id`, `task`, `completed` FROM `todos` WHERE `completed` = 0 AND `deleted` = 0;');
         $query->execute();
         return $query->fetchAll();
     }
     public function getCompletedTasks(): array
     {
-        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 1 AND `deleted` = 0;');
+        $query = $this->db->prepare('SELECT `id`, `task`, `completed` FROM `todos` WHERE `completed` = 1 AND `deleted` = 0;');
         $query->execute();
         return $query->fetchAll();
     }

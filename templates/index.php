@@ -18,10 +18,16 @@
     <button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 </form>
 <ul>
-<?php foreach ($todos as $todo) {
-    echo '<li>' . $todo['task'] .
-        '</li><a href="/markDone?id=' . $todo['id'] . '">mark done</a>
+<?php foreach($todos as $todo) {
+    if ($todo['completed'] == 0) {
+        echo '<li>' . $todo['task'] .
+            '</li><a href="/markDone?id=' . $todo['id'] . '">mark done</a>
             <a href="/delete?id=' . $todo['id'] . '">delete</a>';
+    } else {
+        echo '<li>' . $todo['task'] .
+            '</li><a href="/delete?id=' . $todo['id'] . '">delete</a>';
+    }
+  //  <a href="/delete?completed=true&id=
 } ?>
 </ul>
 <a href="/">Uncompleted Todos</a>
