@@ -29,9 +29,12 @@ class TasksModel
         $query->execute();
         return $query->fetchAll();
     }
-    public function addTask(): array
+    public function addTask($task): array
     {
-
+        $query = $this->db->prepare('INSERT INTO todos (task) VALUES :task;');
+        $query->bindParam('task', $task);
+        $query->execute();
+        return true;
     }
     public function markTaskCompleted(): array
     {

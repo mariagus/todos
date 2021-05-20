@@ -5,7 +5,6 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-    $container = $app->getContainer();
 
     $app->get('/', 'GetUncompletedController');
     $app->get('/completed', 'GetCompletedController');
