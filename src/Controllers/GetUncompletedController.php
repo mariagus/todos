@@ -2,12 +2,13 @@
 
 
 namespace App\Controllers;
+
 use App\Models\TasksModel;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 
-class UncompletedController
+class GetUncompletedController
 {
     protected $model;
     protected $view;
@@ -20,7 +21,7 @@ class UncompletedController
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $uncompleted = $this->model->getUncompletedTasks();
+        $todos = $this->model->getUncompletedTasks();
         return $this->view->render($response, "index.php", ['todos'=> $todos]);
     }
 }

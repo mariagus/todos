@@ -26,8 +26,11 @@
     </style>
 </head>
 <body>
-<h1>Slim</h1>
-<div>a microframework for PHP</div>
-    <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
+<h1>Todos</h1>
+<ul>
+<?php foreach ($todos as $todo) {
+    echo '<ul>' . $todo['task'] . '</ul>';
+} ?>
+</ul>
 </body>
 </html>
