@@ -19,13 +19,13 @@ class TasksModel
     }
     public function getUncompletedTasks(): array
     {
-        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 0;');
+        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 0 AND `deleted` = 0;');
         $query->execute();
         return $query->fetchAll();
     }
     public function getCompletedTasks(): array
     {
-        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 1;');
+        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `completed` = 1 AND `deleted` = 0;');
         $query->execute();
         return $query->fetchAll();
     }
@@ -38,13 +38,16 @@ class TasksModel
     }
     public function markCompleted($id): bool
     {
-        $query = $this->db->prepare('UPDATE todos SET `completed` = 1 WHERE `id` = $id;');
+        $query = $this->db->prepare('UPDATE todos SET `completed` = 1 WHERE `id` = :id;');
         $query->bindParam('id', $id);
         $query->execute();
         return true;
     }
-    public function deleteCompletedTask(): array
+    public function deleteTask($id): bool
     {
-
+        $query = $this->db->prepare('DELETE FROM `todos` WHERE `id` = :id;');
+        $query->bindParam('id', $id);
+        $query->execute();
+        return true;
     }
 }

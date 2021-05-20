@@ -5,25 +5,11 @@
     <title>Slim 4</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <style>
-        body {
-            margin: 50px 0 0 0;
-            padding: 0;
-            width: 100%;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-align: center;
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        h1 {
-            color: #719e40;
-            letter-spacing: -3px;
-            font-family: 'Lato', sans-serif;
-            font-size: 100px;
-            font-weight: 200;
-            margin-bottom: 0;
+        li {
+            font-size: 1.5rem;
         }
     </style>
+
 </head>
 <body>
 <h1>Todos</h1>
@@ -33,7 +19,9 @@
 </form>
 <ul>
 <?php foreach ($todos as $todo) {
-    echo '<ul>' . $todo['task'] . '</ul><a href="/?id=' . $todo['id'] . '">mark done</a>';
+    echo '<li>' . $todo['task'] .
+        '</li><a href="/markDone?id=' . $todo['id'] . '">mark done</a>
+            <a href="/delete?id=' . $todo['id'] . '">delete</a>';
 } ?>
 </ul>
 <a href="/">Uncompleted Todos</a>

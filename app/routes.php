@@ -9,4 +9,5 @@ return function (App $app) {
     $app->get('/', 'GetUncompletedController');
     $app->get('/completed', 'GetCompletedController');
     $app->post('/', 'AddTaskController');
+    $app->get('/markDone', 'MarkCompletedController');
 };
