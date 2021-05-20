@@ -27,14 +27,16 @@
 </head>
 <body>
 <h1>Todos</h1>
-<form method="post" action="index.php" class="input_form">
+<form method="post" action="/" class="input_form">
     <input type="text" name="task" class="task_input">
     <button type="submit" name="submit" id="add_btn" class="add_btn">Add Task</button>
 </form>
 <ul>
 <?php foreach ($todos as $todo) {
-    echo '<ul>' . $todo['task'] . '</ul>';
+    echo '<ul>' . $todo['task'] . '</ul><a href="/?id=' . $todo['id'] . '">mark done</a>';
 } ?>
 </ul>
+<a href="/">Uncompleted Todos</a>
+<a href="/completed">Completed Todos</a>
 </body>
 </html>
