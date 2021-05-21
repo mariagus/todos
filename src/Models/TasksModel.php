@@ -58,7 +58,8 @@ class TasksModel
 
     public function editForm($id): array
     {
-        $query = $this->db->prepare('SELECT `id` FROM `todos` WHERE `id` = :id;');
+        $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `id` = :id;');
+        $query->bindParam('id', $id);
         $query->execute();
         return $query->fetchAll();
     }

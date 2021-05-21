@@ -16,7 +16,7 @@
     if ($todo['completed'] == 0) {
         echo '<div class="container"><li>' . $todo['task'] .
             '</li><a class="markDone" href="/markDone?id=' . $todo['id'] . '">️☑️</a>
-            <a class="edit" href="/editTask.php?id=' . $todo['id'] . '&task=' . $todo['task'] . '">🖋</a>
+            <a class="edit" href="/editTask?id=' . $todo['id'] . '&task=' . $todo['task'] . '">🖋</a>
             <a class="delete" href="/delete?id=' . $todo['id'] . '">🗑</a></div>';
     } else {
         echo '<li>' . $todo['task'] .

@@ -11,6 +11,6 @@ return function (App $app) {
     $app->post('/', 'AddTaskController');
     $app->get('/markDone', 'MarkCompletedController');
     $app->get('/delete', 'DeleteTaskController');
-    $app->get('/editTask.php', 'EditFormController');
+    $app->get('/editTask', 'EditFormController');
     $app->post('/edit', 'EditTaskController');
 };

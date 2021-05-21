@@ -18,7 +18,7 @@ class EditTaskController
 
     public function __invoke(Request $request, Response $response, $args)
     {
-        $data = $request->getQueryParams();
+        $data = $request->getParsedBody();
         $id = $data['id'];
         $task = $data['task'];
         $this->model->editTask($id, $task);

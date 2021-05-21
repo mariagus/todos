@@ -8,9 +8,11 @@
 </head>
 <body>
 <form method="post" action="/edit" class="input_form">
-    <input type="text" name="task" class="task_input">
-    //add input hidden with id value="id" name="id"
+    <h2>Edit task</h2>
+    <input type="text" name="task" class="task_input" value="<?php echo $todos[0]['task']?>">
+    <input type="hidden" name="id" value="<?php echo $todos[0]['id'] ?>">
     <button type="submit" name="submit" id="add_btn" class="add_btn">edit</button>
+
 </form>
 </body>
 </html>
