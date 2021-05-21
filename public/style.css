@@ -9,9 +9,13 @@ body {
     background-color: lightpink;
 }
 
-.container {
+ul {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+.container {
+
 }
 
 a {

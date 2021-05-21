@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <title>Slim 4</title>
@@ -14,14 +14,15 @@
 <ul>
 <?php foreach($todos as $todo) {
     if ($todo['completed'] == 0) {
-        echo '<li>' . $todo['task'] .
-            '</li><div class="container"><a class="markDone" href="/markDone?id=' . $todo['id'] . '">mark done</a>
-            <a class="delete" href="/delete?id=' . $todo['id'] . '">delete</a></div>';
+        echo '<div class="container"><li>' . $todo['task'] .
+            '</li><a class="markDone" href="/markDone?id=' . $todo['id'] . '">️☑️</a>
+            <a class="edit" href="/editTask.php?id=' . $todo['id'] . '&task=' . $todo['task'] . '">🖋</a>
+            <a class="delete" href="/delete?id=' . $todo['id'] . '">🗑</a></div>';
     } else {
         echo '<li>' . $todo['task'] .
-            '</li><a href="/delete?id=' . $todo['id'] . '">delete</a>';
+            '</li><a href="/delete?id=' . $todo['id'] . '">🗑</a>';
     }
-  //  <a href="/delete?completed=true&id=
+
 } ?>
 </ul>
 <a href="/">Uncompleted Todos</a>
