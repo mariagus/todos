@@ -6,7 +6,7 @@ namespace App\Factories;
 use App\Controllers\GetCompletedController;
 use Psr\Container\ContainerInterface;
 
-class GetCompletedControllerFactory
+class GetCompletedFactory
 {
     public function __invoke(ContainerInterface $container): GetCompletedController
     {

@@ -22,7 +22,7 @@ class EditFormController
     {
         $data = $request->getQueryParams();
         $id = $data['id'];
-        $todos = $this->model->editForm($id);
+        $todos = $this->model->getTask($id);
         return $this->view->render($response, "editTask.php", ['todos'=> $todos]);
     }
 }

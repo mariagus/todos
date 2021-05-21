@@ -6,7 +6,7 @@ namespace App\Factories;
 use App\Controllers\GetUncompletedController;
 use Psr\Container\ContainerInterface;
 
-class GetUncompletedControllerFactory
+class GetUncompletedFactory
 {
     public function __invoke(ContainerInterface $container): GetUncompletedController
     {

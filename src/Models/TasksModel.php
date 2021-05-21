@@ -56,12 +56,12 @@ class TasksModel
         return true;
     }
 
-    public function editForm($id): array
+    public function getTask($id): array
     {
         $query = $this->db->prepare('SELECT `id`, `task` FROM `todos` WHERE `id` = :id;');
         $query->bindParam('id', $id);
         $query->execute();
-        return $query->fetchAll();
+        return $query->fetch();
     }
 
     public function editTask($id, $task): bool
