@@ -3,13 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Slim 4</title>
-    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <style>
-        li {
-            font-size: 1.5rem;
-        }
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Todos</h1>
@@ -21,8 +15,8 @@
 <?php foreach($todos as $todo) {
     if ($todo['completed'] == 0) {
         echo '<li>' . $todo['task'] .
-            '</li><a href="/markDone?id=' . $todo['id'] . '">mark done</a>
-            <a href="/delete?id=' . $todo['id'] . '">delete</a>';
+            '</li><div class="container"><a class="markDone" href="/markDone?id=' . $todo['id'] . '">mark done</a>
+            <a class="delete" href="/delete?id=' . $todo['id'] . '">delete</a></div>';
     } else {
         echo '<li>' . $todo['task'] .
             '</li><a href="/delete?id=' . $todo['id'] . '">delete</a>';

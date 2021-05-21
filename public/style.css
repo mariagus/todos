@@ -1,0 +1,28 @@
+h1 {
+    color: navy;
+    font-size: 4rem;
+}
+
+body {
+    font-family: Courier;
+    text-align: center;
+    background-color: lightpink;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    margin: 0.2rem;
+}
+
+li {
+    list-style: none;
+    font-size: 2rem;
+}
+
+
+
+
