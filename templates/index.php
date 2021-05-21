@@ -16,7 +16,7 @@
 <ul>
 <?php foreach($todos as $todo) {
     if ($todo['completed'] == 0) {
-        echo '<div class="container"><a class="markDone" href="/markDone?id=' . $todo['id'] . '">️☑️</a>
+        echo '<div class="container"><a class="markDone" href="/markDone?id=' . $todo['id'] . '">️⚪️️</a>
             <li>' . $todo['task'] . '</li>
             <a class="edit" href="/editTask?id=' . $todo['id'] . '&task=' . $todo['task'] . '">🖋</a>
             <a class="delete" href="/delete?id=' . $todo['id'] . '">🗑</a></div>';
